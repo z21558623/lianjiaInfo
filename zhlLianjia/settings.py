@@ -27,54 +27,30 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
-#CONCURRENT_REQUESTS_PER_IP = 16
+# =============================================================================
+CONCURRENT_REQUESTS = 10
+#DOWNLOAD_DELAY = 0.1
+## AUTOTHROTTLE_ENABLED = True
+## # The initial download delay
+#AUTOTHROTTLE_START_DELAY = 0.1
+#AUTOTHROTTLE_MAX_DELAY = 1
+# # The maximum download delay to be set in case of high latencies
 
-# Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
+USER_AGENTS = [
+    'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)',
+    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)',
+    'Opera/9.27 (Windows NT 5.2; U; zh-cn)',
+    'Opera/8.0 (Macintosh; PPC Mac OS X; U; en)',
+    'Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.0',
+    'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
+    'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13'
+]
 
-# Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
-
-# Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
-#}
-
-# Enable or disable spider middlewares
-# See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'zhlLianjia.middlewares.ZhllianjiaSpiderMiddleware': 543,
-#}
-
-# Enable or disable downloader middlewares
-# See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'zhlLianjia.middlewares.ZhllianjiaDownloaderMiddleware': 543,
-#}
-
-# Enable or disable extensions
-# See https://doc.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
-
-# Configure item pipelines
-# See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zhlLianjia.pipelines.ZhllianjiaPipeline': 300,
-#}
-
-# Enable and configure the AutoThrottle extension (disabled by default)
-# See https://doc.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
-# The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
-# The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
+# =============================================================================
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0

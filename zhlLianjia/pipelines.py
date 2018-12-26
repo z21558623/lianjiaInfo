@@ -20,11 +20,12 @@ class ZhllianjiaPipeline(object):
     def process_item(self, item, spider):
         self.result = self.result.append(dict(item), ignore_index=True)
         return item
-    
+
 class TradeInfoPipeline(object):
 
     def open_spider(self, spider):
-        self.result = pd.DataFrame(columns=['listed_price','transaction_price','town', 'url'])
+        self.result = pd.DataFrame(columns=['city','district','listed_date','listed_price','transaction_price','transaction_cycle','adjust_price','house_inspection','concerned_number',\
+                                            'browse_number','house_type','covered_area','orientation','elevator','transaction_info','cell_name','floors','url'])
 
     
     def close_spider(self, spider):
